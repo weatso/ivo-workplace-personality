@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Using font variables injected by Next.js from local files in layout.tsx */
+  --font-heading: var(--font-hoppin);
+  --font-body: var(--font-lexend);
+}
+
+body {
+  color: #000650;
+  background-color: #f2e1b3;
+  font-family: var(--font-lexend); /* Default to Lexend for body text */
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+@layer utilities {
+  /* Prevent 'font-black' from destroying the brush font or causing Arial fallback */
+  .font-poppins, .font-hoppin {
+    font-weight: normal !important;
+  }
+
+  /* Squigglevision / Line Boiling Animation */
+  .animate-squigglevision {
+    animation: squigglevision 0.4s infinite steps(1);
+  }
+
+  /* Marquee Animation */
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes squigglevision {
+  0% { filter: url('#squiggle-0'); }
+  20% { filter: url('#squiggle-1'); }
+  40% { filter: url('#squiggle-2'); }
+  60% { filter: url('#squiggle-3'); }
+  80% { filter: url('#squiggle-4'); }
+  100% { filter: url('#squiggle-0'); }
+}
+
+@layer components {
+  /* Full Immersive Scene Background */
+  .immersive-scene {
+    @apply min-h-screen w-full relative overflow-hidden flex flex-col;
+    background: #f2e1b3;
+  }
+
+  /* Bento Grid Cards — Bold Retro-Modern: white bg + navy border + retro shadow */
+  .bento-card {
+    @apply bg-white rounded-[2rem] p-6 border-2 border-[#000650] shadow-[4px_4px_0px_#000650] flex flex-col transition-all duration-300;
+  }
+
+  /* Answer Option Buttons */
+  .btn-floating-option {
+    @apply w-full bg-[#424ac7] hover:bg-[#3a3fad] text-white font-semibold py-5 px-8 rounded-full border-2 border-[#000650] shadow-[4px_4px_0px_#000650] transition-all duration-300 text-center flex flex-col items-center justify-center min-h-[64px];
+  }
+
+  /* Badge Pills */
+  .badge-pill {
+    @apply inline-flex items-center justify-center bg-[#f1b32a] text-[#000650] px-4 py-1.5 leading-none rounded-full text-[10px] font-black uppercase tracking-wider border-2 border-[#000650];
+  }
+}
+
+/* Zero Clutter Scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Restore native cursor on touch-only devices (no hover support) */
+@media (hover: none) {
+  body {
+    cursor: auto !important;
+  }
+}
+
+/* Parallax elements perf hint */
+.parallax-hint {
+  will-change: transform;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    background: white !important;
+  }
+}
