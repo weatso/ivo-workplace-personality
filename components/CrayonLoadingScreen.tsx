@@ -3,10 +3,62 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Helper functions to generate random chaotic paths that densely fill the screen
+const generateRandomWavySweep = () => {
+  let path = `M -100 ${Math.random() * 200}`;
+  for (let i = 0; i < 8; i++) {
+    const y1 = Math.random() * 600 + 200;
+    const y2 = Math.random() * 300 - 100;
+    path += ` Q ${Math.random() * 400 + i * 150} ${y1} ${Math.random() * 300 + 100 + i * 150} ${Math.random() * 800}`;
+    path += ` T ${Math.random() * 300 + i * 200} ${y2}`;
+  }
+  return path;
+};
+
+const generateRandomSpirals = () => {
+  let path = `M ${Math.random() * 1200} ${Math.random() * 800}`;
+  for (let i = 0; i < 15; i++) {
+    const c1x = Math.random() * 1400 - 100;
+    const c1y = Math.random() * 1000 - 100;
+    const c2x = Math.random() * 1400 - 100;
+    const c2y = Math.random() * 1000 - 100;
+    const ex = Math.random() * 1400 - 100;
+    const ey = Math.random() * 1000 - 100;
+    path += ` C ${c1x} ${c1y}, ${c2x} ${c2y}, ${ex} ${ey}`;
+  }
+  return path;
+};
+
+const generateRandomZigZag = () => {
+  let path = `M ${Math.random() * 1200} ${Math.random() * 800}`;
+  for (let i = 0; i < 35; i++) {
+    path += ` L ${Math.random() * 1400 - 100} ${Math.random() * 1000 - 100}`;
+  }
+  return path;
+};
+
 export default function CrayonLoadingScreen({ onComplete }: { onComplete: () => void }) {
   const [isAnimating, setIsAnimating] = useState(true);
+  const [paths, setPaths] = useState({
+    yellow: "",
+    orange: "",
+    navy: ""
+  });
+  const [renderOrder, setRenderOrder] = useState(["yellow", "orange", "navy"]);
 
   useEffect(() => {
+    // Generate new unique paths every time the screen mounts
+    setPaths({
+      yellow: generateRandomWavySweep(),
+      orange: generateRandomSpirals(),
+      navy: generateRandomZigZag()
+    });
+
+    // Randomize render order
+    const order = ["yellow", "orange", "navy"];
+    order.sort(() => Math.random() - 0.5);
+    setRenderOrder(order);
+
     // Start fading out the screen after the scribble finishes
     const timer = setTimeout(() => {
       setIsAnimating(false);
@@ -25,73 +77,89 @@ export default function CrayonLoadingScreen({ onComplete }: { onComplete: () => 
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#f2e1b3] overflow-hidden pointer-events-none"
         >
-          <svg
-            className="w-full h-full object-cover min-w-[1200px]"
-            viewBox="0 0 1000 600"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Organic Crayon Filter */}
-            <defs>
-              <filter id="crayon-texture" x="-20%" y="-20%" width="140%" height="140%">
-                <feTurbulence
-                  type="fractalNoise"
-                  baseFrequency="0.8"
-                  numOctaves="3"
-                  result="noise"
-                />
-                <feDisplacementMap
-                  in="SourceGraphic"
-                  in2="noise"
-                  scale="8"
-                  xChannelSelector="R"
-                  yChannelSelector="G"
-                  result="displacement"
-                />
-              </filter>
-            </defs>
+          {paths.yellow && (
+            <svg
+              className="w-full h-full object-cover min-w-[1200px]"
+              viewBox="0 0 1000 600"
+              preserveAspectRatio="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {/* Organic Crayon Filter */}
+              <defs>
+                <filter id="crayon-texture" x="-20%" y="-20%" width="140%" height="140%">
+                  <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency="0.8"
+                    numOctaves="3"
+                    result="noise"
+                  />
+                  <feDisplacementMap
+                    in="SourceGraphic"
+                    in2="noise"
+                    scale="8"
+                    xChannelSelector="R"
+                    yChannelSelector="G"
+                    result="displacement"
+                  />
+                </filter>
+              </defs>
 
-            <g filter="url(#crayon-texture)">
-              {/* Yellow Gold Scribble (Smooth, wide, covering large areas) */}
-              <motion.path
-                d="M -100 500 C 200 -300, 100 900, 400 300 C 700 -300, 600 900, 900 300 C 1200 -300, 1100 900, 1200 300"
-                fill="none"
-                stroke="#f1b32a"
-                strokeWidth="150"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 0.6 }}
-                transition={{ duration: 1.8, ease: "easeInOut", delay: 0.1 }}
-              />
-
-              {/* Vibrant Orange Scribble (Chaotic, looping back on itself) */}
-              <motion.path
-                d="M -100 200 C 150 800, 250 -200, 150 300 C 50 800, 450 -200, 350 300 C 250 800, 650 -200, 550 300 C 450 800, 850 -200, 750 300 C 650 800, 1050 -200, 950 300 C 850 800, 1250 -200, 1150 300"
-                fill="none"
-                stroke="#ff7b17"
-                strokeWidth="90"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 0.85 }}
-                transition={{ duration: 2.2, ease: "easeInOut", delay: 0.2 }}
-              />
-
-              {/* Deep Navy Aggressive Scribble (Erratic overlapping curves) */}
-              <motion.path
-                d="M 1200 400 C 900 -200, 800 800, 700 300 C 600 -200, 500 800, 400 300 C 300 -200, 200 800, 100 300 C 0 -200, -100 800, -200 300"
-                fill="none"
-                stroke="#000650"
-                strokeWidth="100"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
-                transition={{ duration: 2.0, ease: "easeOut", delay: 0.4 }}
-              />
-            </g>
-          </svg>
+              <g filter="url(#crayon-texture)">
+                {renderOrder.map((key) => {
+                  if (key === "yellow") {
+                    return (
+                      <motion.path
+                        key="yellow"
+                        d={paths.yellow}
+                        fill="none"
+                        stroke="#f1b32a"
+                        strokeWidth="140"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: 0.6 }}
+                        transition={{ duration: 1.8, ease: "easeInOut", delay: 0.1 }}
+                      />
+                    );
+                  }
+                  if (key === "orange") {
+                    return (
+                      <motion.path
+                        key="orange"
+                        d={paths.orange}
+                        fill="none"
+                        stroke="#ff7b17"
+                        strokeWidth="80"
+                        strokeDasharray="20 40 100 40"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: 0.85 }}
+                        transition={{ duration: 2.5, ease: "easeInOut", delay: 0.2 }}
+                      />
+                    );
+                  }
+                  if (key === "navy") {
+                    return (
+                      <motion.path
+                        key="navy"
+                        d={paths.navy}
+                        fill="none"
+                        stroke="#000650"
+                        strokeWidth="90"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: 1 }}
+                        transition={{ duration: 2.2, ease: "easeOut", delay: 0.4 }}
+                      />
+                    );
+                  }
+                  return null;
+                })}
+              </g>
+            </svg>
+          )}
         </motion.div>
       )}
     </AnimatePresence>

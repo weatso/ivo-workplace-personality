@@ -79,7 +79,7 @@ export default function Home() {
       <section className="relative w-full min-h-screen overflow-hidden flex flex-col items-center justify-center border-b-4 border-[#000650]">
 
         {/* Background photo */}
-        <div className="absolute inset-0 bg-[url('/Landing.PNG')] bg-cover bg-center bg-no-repeat animate-squigglevision pointer-events-none z-0" />
+        <div className="absolute inset-0 bg-[url('/Landing.webp')] bg-cover bg-center bg-no-repeat animate-squigglevision pointer-events-none z-0" />
         <div className="absolute inset-0 bg-white/25 backdrop-blur-[2px] pointer-events-none z-0" />
 
         {/* Matter.js physics playground — doodle shapes fall & respond to cursor */}

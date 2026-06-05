@@ -146,7 +146,7 @@ export default function DynamicQuizPage() {
             initial={{ left: 0 }}
             animate={{ left: `${progress}%` }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="absolute -top-7 -translate-x-1/2 text-2xl drop-shadow-md z-10"
+            className="absolute -top-7 -translate-x-1/2 scale-x-[-1] text-2xl drop-shadow-md z-10"
           >
             🏃‍♀️
           </motion.div>

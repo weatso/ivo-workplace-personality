@@ -1,11 +1,11 @@
 import { StaticImageData } from "next/image";
 
-import LandingImg from "../public/Landing.PNG";
-import P3Img from "../public/pertanyaan3.PNG";
-import P4Img from "../public/pertanyaan4.PNG";
-import P5Img from "../public/pertanyaan5.PNG";
-import P6Img from "../public/pertanyaan6.PNG";
-import P7Img from "../public/pertanyaan7.PNG";
+import LandingImg from "../public/Landing.webp";
+import P3Img from "../public/pertanyaan3.webp";
+import P4Img from "../public/pertanyaan4.webp";
+import P5Img from "../public/pertanyaan5.webp";
+import P6Img from "../public/pertanyaan6.webp";
+import P7Img from "../public/pertanyaan7.webp";
 
 export type PersonalityType = 'A' | 'B' | 'C' | 'D';
 

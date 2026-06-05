@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useUISound } from "@/hooks/useUISound";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useTransitionStore } from "@/store/useTransitionStore";
 
 const NAV_LINKS = [
   { label: "Home",  href: "/" },
@@ -16,8 +17,10 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const { playPop } = useUISound();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { triggerTransition } = useTransitionStore();
 
   // Hide navbar entirely on immersive full-screen pages
   const isImmersiveRoute =
@@ -28,9 +31,16 @@ export default function Navbar() {
 
   if (isImmersiveRoute) return null;
 
-  const handleLinkClick = () => {
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
     playPop();
     setMobileOpen(false);
+
+    if (pathname === href) return;
+
+    triggerTransition(() => {
+      router.push(href);
+    });
   };
 
   return (
@@ -39,7 +49,7 @@ export default function Navbar() {
       <nav className="w-full bg-[#f2e1b3] border-b-2 border-[#000650] py-2 px-6 sm:px-8 flex items-center justify-between shadow-[0_4px_0px_rgba(0,6,80,0.05)]">
         
         {/* LOGO */}
-        <Link href="/" onClick={handleLinkClick} className="flex items-center gap-2">
+        <Link href="/" onClick={(e) => handleNavigation(e, "/")} className="flex items-center gap-2">
           <span className="text-xl sm:text-2xl font-hoppin text-[#000650] tracking-wide hover:scale-105 transition-transform origin-left">
             Web Ivo&apos;s
           </span>
@@ -51,7 +61,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               href={link.href}
-              onClick={handleLinkClick}
+              onClick={(e) => handleNavigation(e, link.href)}
               className="font-lexend font-bold text-[#000650] hover:text-[#ff7b17] hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wider"
             >
               {link.label}
@@ -102,7 +112,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={link.href}
-                    onClick={handleLinkClick}
+                    onClick={(e) => handleNavigation(e, link.href)}
                     className="flex items-center gap-3 px-6 py-3 font-lexend font-black text-sm uppercase tracking-widest text-[#000650] hover:bg-[#f1b32a] hover:text-[#000650] transition-colors border-b border-[#000650]/10 last:border-b-0"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#ff7b17] shrink-0" />
