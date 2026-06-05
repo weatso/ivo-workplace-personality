@@ -26,6 +26,18 @@ const hoppin = localFont({
 export const metadata: Metadata = {
   title: "Web Ivo's | What Personality Are You?",
   description: "Temukan tipe kepribadian profesionalmu dengan kuis seru di Web Ivo's. Gratis!",
+  openGraph: {
+    title: "Web Ivo's | What Personality Are You?",
+    description: "Temukan tipe kepribadian profesionalmu dengan kuis seru di Web Ivo's. Gratis!",
+    url: "https://ivo-workplace-personality.vercel.app/",
+    siteName: "Web Ivo's",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Ivo's | What Personality Are You?",
+    description: "Temukan tipe kepribadian profesionalmu dengan kuis seru di Web Ivo's. Gratis!",
+  }
 };
 
 export default function RootLayout({
