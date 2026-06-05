@@ -24,8 +24,8 @@ const hoppin = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Web Ivo's | What Cake R U? Pro",
-  description: "Temukan tipe kepribadian profesionalmu dengan kuis seru Web Ivo's. Gratis!",
+  title: "Web Ivo's | What Personality Are You?",
+  description: "Temukan tipe kepribadian profesionalmu dengan kuis seru di Web Ivo's. Gratis!",
 };
 
 export default function RootLayout({
