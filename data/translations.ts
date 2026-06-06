@@ -7,17 +7,17 @@ export const T = {
     landing: {
       hero: {
         title: "Web Ivo's",
-        subtitle: "Spill Work Vibes & Kepribadian Lo di Sini!",
+        subtitle: "Spill Work Vibes & Kepribadian Kamu di Sini!",
         cta: "Let's Go! 🚀",
         buyBook: "Check Out Bukunya",
       },
       intro: {
         heading: "Ngapain Sih Bikin Web Ini?",
-        body: "Literally web ini dibuat biar lo paham work vibes lo kayak gimana. Apakah lo tipe yang lowkey nahan diri, gampang meledak, suka nyindir halus, atau malah slay banget nyampein pendapat? Paham ginian tuh penting banget biar karir dan circle profesional lo makin healthy and toxic-free!",
+        body: "Literally web ini dibuat biar kamu paham work vibes kamu kayak gimana. Apakah kamu tipe yang lowkey nahan diri, gampang meledak, suka nyindir halus, atau malah slay banget nyampein pendapat? Paham ginian tuh penting banget biar karir dan circle profesional kamu makin healthy and toxic-free!",
       },
       showcase: {
-        heading: "4 Work Personas Lo",
-        sub: "Cek lo masuk circle yang mana dan gimana cara keep up sama bestie sekantor!",
+        heading: "4 Work Personas Kamu",
+        sub: "Cek kamu masuk circle yang mana dan gimana cara keep up sama bestie sekantor!",
         types: [
           { name: "Pasif (The People Pleaser)", desc: "Lowkey diem aja, FOMO konflik, dan sering nahan opini demi nyenengin orang lain. Relate?", emoji: "😶", color: "bg-[#81D4FA]" },
           { name: "Agresif (The Bossy)", desc: "Vibes-nya mendominasi abis. Nggak ragu maksa kehendak dan kadang red flag karena ngabaikan perasaan yang lain.", emoji: "😡", color: "bg-[#FFAB76]" },
@@ -26,8 +26,8 @@ export const T = {
         ]
       },
       quizCTA: {
-        heading: "Ready Buat Spill Work Vibes Lo?",
-        body: "Cuma butuh 3 menit kok. Yuk take kuisnya dan cari tau cara paling make sense buat survive di kantor lo.",
+        heading: "Ready Buat Spill Work Vibes Kamu?",
+        body: "Cuma butuh 3 menit kok. Yuk take kuisnya dan cari tau cara paling make sense buat survive di kantor kamu.",
         cta: "Mulai Kuisnya, Yuk!"
       },
       buyBanner: {
@@ -35,7 +35,7 @@ export const T = {
         title: "Level Up Jadi Si",
         highlight: "Asertif",
         suffix: "di Kantor!",
-        sub: "Jujurly lo wajib punya buku ini. Bakal ngubah cara lo survive di kerjaan selamanya.",
+        sub: "Jujurly kamu wajib punya buku ini. Bakal ngubah cara kamu survive di kerjaan selamanya.",
         cta: "Check Out Sekarang →",
       },
       ticket: {
@@ -74,7 +74,7 @@ export const T = {
         days: "Hari",
         hours: "Jam",
         mins: "Menit",
-        emailPlaceholder: "email@lo.com",
+        emailPlaceholder: "email@kamu.com",
         remindBtn: "Ingetin Gue",
         remindedMsg: "✅ Bakal gue ingetin kok!",
       },
@@ -99,7 +99,7 @@ export const T = {
     // ── Intro Page ───────────────────────────────────────────────────────────
     intro: {
       title: "Welcome to The Sweet Pastels World! 🎨",
-      body: "Di sini lo bisa cari tau peran paling make sense buat lo di kantor dan nemuin jati diri lo yang sebenarnya. Udah ready buat mulai petualangan manis ini?",
+      body: "Di sini kamu bisa cari tau peran paling make sense buat kamu di kantor dan nemuin jati diri kamu yang sebenarnya. Udah ready buat mulai petualangan manis ini?",
       cta: "Let's Go!",
     },
 
@@ -111,17 +111,17 @@ export const T = {
     // ── Finish Page ──────────────────────────────────────────────────────────
     finish: {
       title: "Slayyy! ✨",
-      body: "Lo udah kelarin semua pertanyaannya. Vibes kepribadian lo udah mau mateng nih!",
-      cta: "Cek Vibes Lo Sekarang",
+      body: "Kamu udah kelarin semua pertanyaannya. Vibes kepribadian kamu udah mau mateng nih!",
+      cta: "Cek Vibes Kamu Sekarang",
       loadingTitle: "Wait a sec...",
-      loadingBody: "Lagi nge-mix adonan kepribadian lo",
+      loadingBody: "Lagi nge-mix adonan kepribadian kamu",
     },
 
     // ── Result Page ──────────────────────────────────────────────────────────
     result: {
-      youAre: "Jujurly, lo itu...",
+      youAre: "Jujurly, kamu itu...",
       tags: ["#Slay", "#WorkBestie", "#Professional"],
-      strengths: "Superpower Lo",
+      strengths: "Superpower Kamu",
       perfectionism: "Tingkat Overthinking",
       persona: "Work Persona",
       workBesties: "Bestie Sekantor",

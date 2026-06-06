@@ -24,18 +24,18 @@ export interface Question {
 export const questions: Question[] = [
   {
     id: 1,
-    text: "Pas lagi ada masalah atau beda pendapat sama rekan kerja, behavior (perilaku) apa yang paling sering lo lakuin secara refleks?",
+    text: "Pas lagi ada masalah atau beda pendapat sama rekan kerja, behavior (perilaku) apa yang paling sering kamu lakuin secara refleks?",
     image: LandingImg,
     options: [
-      { text: "Diam aja dan nggak ngungkapin apa yang sebenernya lo mau atau rasain.", type: "A" },
-      { text: "Maksain pendapat lo harus diterima, dan nganggap ide orang lain itu salah atau bodoh.", type: "B" },
+      { text: "Diam aja dan nggak ngungkapin apa yang sebenernya kamu mau atau rasain.", type: "A" },
+      { text: "Maksain pendapat kamu harus diterima, dan nganggap ide orang lain itu salah atau bodoh.", type: "B" },
       { text: "Nggak langsung ngomong intinya, malah ghosting, nunda-nunda kerjaan, atau denial.", type: "C" },
-      { text: "Jujur dan direct nyampein poin lo, tapi tetap respect sama orang lain.", type: "D" },
+      { text: "Jujur dan direct nyampein poin kamu, tapi tetap respect sama orang lain.", type: "D" },
     ],
   },
   {
     id: 2,
-    text: "Kalau lagi ada di situasi kerja yang under pressure atau banyak gesekan, emosi apa yang biasanya mendominasi diri lo setelahnya?",
+    text: "Kalau lagi ada di situasi kerja yang under pressure atau banyak gesekan, emosi apa yang biasanya mendominasi diri kamu setelahnya?",
     image: LandingImg,
     options: [
       { text: "Takut ditolak, merasa frustrasi sendiri, dan ngerasa self-respect lagi rendah.", type: "A" },
@@ -46,7 +46,7 @@ export const questions: Question[] = [
   },
   {
     id: 3,
-    text: "Pas lagi meeting penting face-to-face sama klien atau bos, postur tubuh lo secara nggak sadar tuh kayak gimana?",
+    text: "Pas lagi meeting penting face-to-face sama klien atau bos, postur tubuh kamu secara nggak sadar tuh kayak gimana?",
     image: P3Img,
     options: [
       { text: "Duduk nunduk dan ngebungkuk, vibes-nya ciut banget.", type: "A" },
@@ -57,7 +57,7 @@ export const questions: Question[] = [
   },
   {
     id: 4,
-    text: "Lagi jelasin ide atau ngejawab pertanyaan susah dari atasan, body language lo biasanya gimana?",
+    text: "Lagi jelasin ide atau ngejawab pertanyaan susah dari atasan, body language kamu biasanya gimana?",
     image: P4Img,
     options: [
       { text: "Gerakan heboh karena overthinking, kayak ngibas tangan atau pegang-pegang baju.", type: "A" },
@@ -68,7 +68,7 @@ export const questions: Question[] = [
   },
   {
     id: 5,
-    text: "Pas lagi dengerin arahan di situasi formal yang lumayan intense, cara lo maintain eye contact tuh...",
+    text: "Pas lagi dengerin arahan di situasi formal yang lumayan intense, cara kamu maintain eye contact tuh...",
     image: P5Img,
     options: [
       { text: "Sering nunduk, nggak berani natap mata, atau cuma ngelirik dikit.", type: "A" },
@@ -79,7 +79,7 @@ export const questions: Question[] = [
   },
   {
     id: 6,
-    text: "Di tengah diskusi profesional yang panas atau berpotensi debat, ekspresi muka lo tuh dominan kayak gimana?",
+    text: "Di tengah diskusi profesional yang panas atau berpotensi debat, ekspresi muka kamu tuh dominan kayak gimana?",
     image: P6Img,
     options: [
       { text: "Keliatan anxious, dahi berkerut, atau ketawa awkward nutupin panik.", type: "A" },
@@ -90,7 +90,7 @@ export const questions: Question[] = [
   },
   {
     id: 7,
-    text: "Giliran lo buat speak up dan nyampein argumen di dalem ruangan, nada bicara lo biasanya...",
+    text: "Giliran kamu buat speak up dan nyampein argumen di dalem ruangan, nada bicara kamu biasanya...",
     image: P7Img,
     options: [
       { text: "Kekecilan banget, ragu-ragu, dan terbata-bata sampe susah kedengeran.", type: "A" },
@@ -101,18 +101,18 @@ export const questions: Question[] = [
   },
   {
     id: 8,
-    text: "Soal prioritas kebutuhan di tempat kerja, mindset atau belief mana yang diam-diam paling lo pegang teguh?",
+    text: "Soal prioritas kebutuhan di tempat kerja, mindset atau belief mana yang diam-diam paling kamu pegang teguh?",
     image: LandingImg,
     options: [
       { text: "Kebutuhan orang lain itu jatuhnya lebih penting daripada kebutuhan diri sendiri.", type: "A" },
-      { text: "Kebutuhan lo jelas lebih penting daripada kebutuhan orang lain.", type: "B" },
-      { text: "Lo merasa berhak buat menang, tapi sebisa mungkin nggak mau disuruh tanggung jawab.", type: "C" },
-      { text: "Kebutuhan lo dan kebutuhan orang lain itu equally matter (sama-sama penting dan berharga).", type: "D" },
+      { text: "Kebutuhan kamu jelas lebih penting daripada kebutuhan orang lain.", type: "B" },
+      { text: "Kamu merasa berhak buat menang, tapi sebisa mungkin nggak mau disuruh tanggung jawab.", type: "C" },
+      { text: "Kebutuhan kamu dan kebutuhan orang lain itu equally matter (sama-sama penting dan berharga).", type: "D" },
     ],
   },
   {
     id: 9,
-    text: "Di tengah perdebatan panjang atau konflik tim, sebenernya apa sih goal utama yang pengen banget lo capai?",
+    text: "Di tengah perdebatan panjang atau konflik tim, sebenernya apa sih goal utama yang pengen banget kamu capai?",
     image: LandingImg,
     options: [
       { text: "Sebisa mungkin hindari konflik, mending kasih kontrol atau keputusan akhir ke orang lain aja.", type: "A" },
@@ -143,25 +143,25 @@ export const getResult = (answers: PersonalityType[]) => {
   const resultsData: Record<PersonalityType, { title: string; description: string; emoji: string; color: string }> = {
     A: {
       title: "Pasif (The People Pleaser)",
-      description: "Jujurly, lo terlalu sering nahan diri dan fomo sama opini orang lain. Lo emang pendengar yang baik, tapi plis deh, suara lo juga berhak didenger. Jangan takut bilang 'nggak' ya!",
+      description: "Jujurly, kamu terlalu sering nahan diri dan fomo sama opini orang lain. Kamu emang pendengar yang baik, tapi plis deh, suara kamu juga berhak didenger. Jangan takut bilang 'nggak' ya!",
       emoji: "😶",
       color: "bg-[#81D4FA]"
     },
     B: {
       title: "Agresif (The Bossy)",
-      description: "Vibes lo tuh dominan banget dan super goal-oriented. Lo berani banget take charge, tapi lowkey sering ngabaikan perasaan rekan kerja. Hati-hati jangan sampe dicap red flag, bestie!",
+      description: "Vibes kamu tuh dominan banget dan super goal-oriented. Kamu berani banget take charge, tapi lowkey sering ngabaikan perasaan rekan kerja. Hati-hati jangan sampe dicap red flag, bestie!",
       emoji: "😡",
       color: "bg-[#FFAB76]"
     },
     C: {
       title: "Pasif-Agresif (The Sarcastic)",
-      description: "Lo literally jagonya ngehindarin konflik langsung, tapi ngelampiasinnya lewat sindiran atau body language yang malesin. Keliatannya setuju, tapi di dalem nolak keras. Ayo belajar lebih direct!",
+      description: "Kamu literally jagonya ngehindarin konflik langsung, tapi ngelampiasinnya lewat sindiran atau body language yang malesin. Keliatannya setuju, tapi di dalem nolak keras. Ayo belajar lebih direct!",
       emoji: "🙄",
       color: "bg-[#FFD54F]"
     },
     D: {
       title: "Asertif (The Slay One)",
-      description: "Slayyy! ✨ Lo tuh green flag banget di dunia kerja. Lo bisa nyampein boundary dan pendapat lo dengan tegas tapi tetep super humble and respectful. Pertahanin vibes ini ya!",
+      description: "Slayyy! ✨ Kamu tuh green flag banget di dunia kerja. Kamu bisa nyampein boundary dan pendapat kamu dengan tegas tapi tetep super humble and respectful. Pertahanin vibes ini ya!",
       emoji: "🤝",
       color: "bg-[#69C98B]"
     }

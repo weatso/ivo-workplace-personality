@@ -14,9 +14,9 @@ export default function BookCountdown() {
 
   useEffect(() => {
     setIsMounted(true);
-    // Set target to June 8 (assuming 2026 based on current year) at 06:00 AM
+    // Set target to June 12 (assuming 2026 based on current year) at 06:00 AM
     // You can adjust the year if needed.
-    const targetDate = new Date("2026-06-08T06:00:00").getTime();
+    const targetDate = new Date("2026-06-12T06:00:00").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -69,7 +69,7 @@ export default function BookCountdown() {
           Jangan Sampai Ketinggalan!
         </h2>
         <p className="text-lg font-lexend font-bold text-white/90 mb-12 max-w-2xl">
-          Buku eksklusif ini bakal dipresentasiin langsung pada tanggal 8 Juni jam 06.00 pagi. Siapin diri lo buat dapet insight paling daging seputar dunia kerja!
+          Buku eksklusif ini bakal dipresentasiin langsung pada tanggal 12 Juni jam 06.00 pagi. Siapin diri kamu buat dapet insight paling daging seputar dunia kerja!
         </p>
 
         {/* Timer Blocks */}

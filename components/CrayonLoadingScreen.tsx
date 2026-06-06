@@ -84,27 +84,8 @@ export default function CrayonLoadingScreen({ onComplete }: { onComplete: () => 
               preserveAspectRatio="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              {/* Organic Crayon Filter */}
-              <defs>
-                <filter id="crayon-texture" x="-20%" y="-20%" width="140%" height="140%">
-                  <feTurbulence
-                    type="fractalNoise"
-                    baseFrequency="0.8"
-                    numOctaves="3"
-                    result="noise"
-                  />
-                  <feDisplacementMap
-                    in="SourceGraphic"
-                    in2="noise"
-                    scale="8"
-                    xChannelSelector="R"
-                    yChannelSelector="G"
-                    result="displacement"
-                  />
-                </filter>
-              </defs>
-
-              <g filter="url(#crayon-texture)">
+              {/* Removed the SVG filter here because Safari (iOS & Mac) rendering engine crashes when animating feDisplacementMap. The density of the random paths already creates a fantastic scribble effect natively. */}
+              <g>
                 {renderOrder.map((key) => {
                   if (key === "yellow") {
                     return (

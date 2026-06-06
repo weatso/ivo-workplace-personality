@@ -331,11 +331,11 @@ export default function Home() {
             <a href="mailto:contact@ivopermata.com" className="w-12 h-12 bg-white border-2 border-[#000650] shadow-[3px_3px_0px_#000650] active:shadow-[1px_1px_0px_#000650] active:translate-x-[2px] active:translate-y-[2px] rounded-full flex items-center justify-center text-[#424ac7] active:text-[#ff7b17] transition-all cursor-pointer">
               <Mail size={20} strokeWidth={2.5} />
             </a>
-            <a href="https://www.instagram.com/teresaivo_/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white border-2 border-[#000650] shadow-[3px_3px_0px_#000650] active:shadow-[1px_1px_0px_#000650] active:translate-x-[2px] active:translate-y-[2px] rounded-full flex items-center justify-center text-[#424ac7] active:text-[#ff7b17] transition-all cursor-pointer">
+            <a href="https://www.instagram.com/firstjob_guide/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white border-2 border-[#000650] shadow-[3px_3px_0px_#000650] active:shadow-[1px_1px_0px_#000650] active:translate-x-[2px] active:translate-y-[2px] rounded-full flex items-center justify-center text-[#424ac7] active:text-[#ff7b17] transition-all cursor-pointer">
               <Instagram size={20} strokeWidth={2.5} />
             </a>
             {/* Added TikTok placeholder link since requested */}
-            <a href="#" className="w-12 h-12 bg-white border-2 border-[#000650] shadow-[3px_3px_0px_#000650] active:shadow-[1px_1px_0px_#000650] active:translate-x-[2px] active:translate-y-[2px] rounded-full flex items-center justify-center text-[#424ac7] active:text-[#ff7b17] transition-all cursor-pointer">
+            <a href="https://www.tiktok.com/@firstjob_guide" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white border-2 border-[#000650] shadow-[3px_3px_0px_#000650] active:shadow-[1px_1px_0px_#000650] active:translate-x-[2px] active:translate-y-[2px] rounded-full flex items-center justify-center text-[#424ac7] active:text-[#ff7b17] transition-all cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
             </a>
             <a href="#" className="w-12 h-12 bg-white border-2 border-[#000650] shadow-[3px_3px_0px_#000650] active:shadow-[1px_1px_0px_#000650] active:translate-x-[2px] active:translate-y-[2px] rounded-full flex items-center justify-center text-[#424ac7] active:text-[#ff7b17] transition-all cursor-pointer">
