@@ -54,76 +54,56 @@ export default function PromoModal() {
             }}
             className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none px-5"
           >
-            <div className="pointer-events-auto relative w-full max-w-sm overflow-hidden bg-[#f2e1b3] border-4 border-[#000650] rounded-[2rem] shadow-[8px_8px_0px_#000650]">
-
+            <div className="pointer-events-auto relative w-full max-w-[420px] overflow-hidden bg-[#f2e1b3] border-4 border-[#000650] rounded-[2rem] shadow-[10px_10px_0px_#000650]">
               {/* Bold retro top stripe */}
               <div className="w-full h-3 bg-[#ff7b17]" />
 
               {/* Close Button */}
               <button
                 onClick={handleClose}
-                className="absolute top-5 right-5 w-9 h-9 bg-white border-2 border-[#000650] shadow-[2px_2px_0px_#000650] text-[#000650] hover:bg-[#f1b32a] rounded-full flex items-center justify-center transition-all z-10 cursor-pointer"
+                className="absolute top-5 right-5 w-9 h-9 bg-white border-2 border-[#000650] shadow-[2px_2px_0px_#000650] text-[#000650] hover:bg-[#f1b32a] rounded-full flex items-center justify-center transition-all z-30 cursor-pointer"
               >
                 <X size={16} strokeWidth={2.5} />
               </button>
 
               {/* Content */}
-              <div className="px-8 pt-7 pb-9 flex flex-col items-center text-center">
-
-                {/* Floating mascot — keep the fun emoji but restyled */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                  className="text-5xl mb-4 drop-shadow-md"
-                >
-                  ✨
-                </motion.div>
+              <div className="px-6 sm:px-8 pt-7 pb-9 flex flex-col items-center text-center">
 
                 {/* Badge — yellow gold retro pill */}
                 <div className="mb-4 px-4 py-1.5 rounded-full bg-[#f1b32a] text-[#000650] font-poppins font-black text-[10px] uppercase tracking-widest border-2 border-[#000650] shadow-[2px_2px_0px_#000650]">
                   {t.badge}
                 </div>
 
-                {/* Main Title */}
-                <h2 className="text-3xl font-poppins font-black leading-tight tracking-tight text-[#000650]">
+                {/* Pre-title */}
+                <p className="mb-6 text-sm sm:text-base font-lexend font-medium text-[#000650] leading-snug px-2">
                   {t.title1}
-                  <br />
-                  <span className="text-[#ff7b17]">{t.title2}</span>
-                </h2>
-
-                {/* Subtext */}
-                <p className="mt-2 text-sm font-lexend font-semibold text-[#424ac7] uppercase tracking-widest">
-                  {t.sub}
                 </p>
+
+                {/* Main Title */}
+                <h2 className="text-[22px] sm:text-[26px] font-poppins font-black leading-tight tracking-tight text-[#ff7b17]">
+                  <span className="whitespace-nowrap">"{t.title2}</span>
+                  <br />
+                  <span className="whitespace-nowrap">{t.title3}"</span>
+                </h2>
 
                 {/* Divider — retro style */}
                 <div className="my-5 flex items-center gap-3 w-full">
                   <div className="flex-1 h-[2px] bg-[#000650]/20" />
-                  <span className="text-lg">🎉</span>
+                  <span className="text-xs font-lexend font-bold text-[#424ac7] uppercase tracking-wider whitespace-nowrap">
+                    {t.sub}
+                  </span>
                   <div className="flex-1 h-[2px] bg-[#000650]/20" />
                 </div>
 
-                {/* CTA Button — native anchor, cannot be blocked by popup blocker */}
-                <motion.a
-                  href="https://bit.ly/PreOrderFirstJobGuide"
+                {/* CTA Button */}
+                <a
+                  href="https://bit.ly/RegistasiSeminarFirstJob"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={handleClose}
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.96 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   className="block w-full py-4 rounded-full bg-[#ff7b17] hover:bg-[#e66a12] text-white font-poppins font-black text-sm uppercase tracking-wider text-center border-2 border-[#000650] shadow-[4px_4px_0px_#000650] hover:shadow-[2px_2px_0px_#000650] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer"
                 >
                   {t.cta}
-                </motion.a>
-
-                {/* Dismiss */}
-                <button
-                  onClick={handleClose}
-                  className="mt-4 text-xs font-lexend font-semibold text-[#424ac7] hover:text-[#000650] transition-colors underline underline-offset-2 cursor-pointer"
-                >
-                  {t.dismiss}
-                </button>
+                </a>
               </div>
 
               {/* Bold retro bottom stripe */}

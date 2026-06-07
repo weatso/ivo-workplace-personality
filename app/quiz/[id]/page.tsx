@@ -66,7 +66,7 @@ export default function DynamicQuizPage() {
 
   if (!mounted || !currentQuestion) {
     return (
-      <div className="min-h-screen w-full flex items-center justify-center bg-[#4544ac]">
+      <div className="min-h-[100dvh] w-full flex items-center justify-center bg-[#4544ac]">
         <div className="w-12 h-12 rounded-full border-4 border-[#ff7b17] border-t-transparent animate-spin" />
       </div>
     );
@@ -109,7 +109,7 @@ export default function DynamicQuizPage() {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-between relative overflow-hidden bg-[#4544ac] select-none">
+    <div className="min-h-[100dvh] w-full flex flex-col items-center justify-between relative overflow-hidden bg-[#4544ac] select-none">
 
       {/* ── RETRO GRID OVERLAY ── */}
       <div 
@@ -148,7 +148,7 @@ export default function DynamicQuizPage() {
             transition={{ duration: 0.4, ease: "easeOut" }}
             className="absolute -top-7 -translate-x-1/2 scale-x-[-1] text-2xl drop-shadow-md z-10"
           >
-            🏃‍♀️
+            ‍️
           </motion.div>
           {/* Thick Brutalist Progress Bar */}
           <div className="w-full h-4 bg-white rounded-full relative border-2 border-[#000650] shadow-[2px_2px_0px_#000650] overflow-hidden">
@@ -213,7 +213,7 @@ export default function DynamicQuizPage() {
                 key={index}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => handleAnswer(option, index)}
-                className="w-full relative bg-white/10 backdrop-blur-sm border border-white/15 shadow-[0_4px_30px_rgba(0,0,0,0.03)] sm:bg-transparent sm:backdrop-blur-none sm:border-transparent sm:shadow-none text-white py-3.5 px-4 rounded-[1.25rem] font-lexend font-bold text-center transition-all flex items-center justify-center min-h-[52px] cursor-pointer group overflow-hidden"
+                className="w-full relative bg-white/10 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(0,0,0,0.1)] text-white hover:bg-white/20 py-3.5 px-4 rounded-[1.25rem] font-lexend font-bold text-center transition-all flex items-center justify-center min-h-[52px] cursor-pointer group overflow-hidden"
               >
                 {/* ── DOODLE STAMP EFFECT ── */}
                 <AnimatePresence>

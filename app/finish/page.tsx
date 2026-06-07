@@ -38,10 +38,10 @@ export default function FinishPage() {
   };
 
   // Retro floating shapes
-  const shapes = ["★", "◆", "●", "▲", "✦", "◉"];
+  const shapes = ["", "◆", "●", "▲", "✦", "◉"];
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-between relative overflow-hidden bg-[#f2e1b3] select-none p-6">
+    <div className="min-h-[100dvh] w-full flex flex-col items-center justify-between relative overflow-hidden bg-[#f2e1b3] select-none p-6">
       
       {/* Decorative Retro Background Elements */}
       <div className="absolute top-[15%] left-[10%] animate-[bounce_4s_ease-in-out_infinite] text-4xl opacity-40 z-0 text-[#000650] font-black">
@@ -120,7 +120,7 @@ export default function FinishPage() {
                   transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute text-5xl"
                 >
-                  ⏳
+                  
                 </motion.div>
               </div>
 

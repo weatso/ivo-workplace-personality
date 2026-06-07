@@ -22,105 +22,16 @@ const FloatingShape = ({ style, emoji }: { style: React.CSSProperties; emoji: st
 // ─── WhatsApp number ─────────────────────────────────────────────────────────
 const WA_NUMBER = "6281805877845";
 
-// ─── Book data ────────────────────────────────────────────────────────────────
-const BOOKS = [
-  {
-    id: "cheesecake",
-    emoji: "📚",
-    bg: "bg-[#f1b32a]",
-    border: "border-[#000650]",
-    titleId: "Panduan Karir Eksklusif: The Pro Guide",
-    titleEn: "Exclusive Career Guide: The Pro Guide",
-    descId: "Panduan lengkap untuk menemukan kekuatan tersembunyi di tempat kerjamu. Wajib punya buat yang pengen level up karir secara instan!",
-    descEn: "A complete guide to uncovering your hidden strengths in the workplace. A must-have for those who want to level up their career instantly!",
-    image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=600&auto=format&fit=crop"
-  }
-];
-
-// ─── Book Catalog Component ───────────────────────────────────────────────────
-function BookCatalog() {
-  const isEn = false;
-
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ type: "spring", stiffness: 240, damping: 22, delay: 0.1 }}
-      className="mt-12"
-    >
-      {/* Section heading — retro divider */}
-      <div className="flex items-center gap-3 mb-6">
-        <div className="flex-1 h-[2px] bg-[#000650]/20" />
-        <h2 className="text-[11px] font-poppins font-black uppercase tracking-[0.25em] text-[#ff7b17] whitespace-nowrap">
-          {isEn ? "📚 Exclusive Book Catalog" : "📚 Katalog Buku Eksklusif"}
-        </h2>
-        <div className="flex-1 h-[2px] bg-[#000650]/20" />
-      </div>
-
-      {/* Single book showcase */}
-      <div className="max-w-md mx-auto">
-        {BOOKS.map((book, i) => {
-          const title = isEn ? book.titleEn : book.titleId;
-          const desc  = isEn ? book.descEn  : book.descId;
-          const isLight = book.id === "cheesecake" || book.id === "marshmallow";
-          return (
-            <motion.div
-              key={book.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08, type: "spring", stiffness: 260, damping: 22 }}
-              className={`${book.bg} border-4 ${book.border} rounded-3xl overflow-hidden shadow-[6px_6px_0px_#000650] flex flex-col`}
-            >
-              {/* Book cover image */}
-              <div className="relative w-full h-48 border-b-4 border-[#000650] overflow-hidden bg-black/5">
-                <img src={book.image} alt={title} className="w-full h-full object-cover pointer-events-none" />
-                <div className="absolute top-0 left-0 w-3 h-full bg-black/20 mix-blend-multiply" />
-              </div>
-
-              {/* Book info */}
-              <div className={`px-5 pt-4 pb-5 flex flex-col flex-1 gap-3 ${isLight ? "bg-white/30" : "bg-black/10"}`}>
-                <div>
-                  <h3 className={`font-poppins font-black text-sm leading-snug ${isLight ? "text-[#000650]" : "text-white"}`}>
-                    {title}
-                  </h3>
-                  <p className={`mt-1.5 text-[11px] font-lexend font-medium leading-relaxed line-clamp-3 ${isLight ? "text-[#424ac7]" : "text-white/80"}`}>
-                    {desc}
-                  </p>
-                </div>
-
-                {/* Buy button — native anchor, cannot be blocked by popup blocker */}
-                <motion.a
-                  href="https://bit.ly/PreOrderFirstJobGuide"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 400, damping: 10 } }}
-                  whileTap={{ scale: 0.95 }}
-                  className="mt-auto w-full flex items-center justify-center gap-2 bg-white text-[#000650] hover:bg-[#f1b32a] font-poppins font-black text-[11px] uppercase tracking-widest py-3 rounded-full border-2 border-[#000650] shadow-[3px_3px_0px_#000650] hover:shadow-[1px_1px_0px_#000650] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer"
-                >
-                  <MessageCircle size={13} strokeWidth={2.5} />
-                  {isEn ? "Pre-Order Now" : "Pre-Order Sekarang"}
-                </motion.a>
-              </div>
-            </motion.div>
-          );
-        })}
-      </div>
-    </motion.div>
-  );
-}
 
 export default function EventPage() {
   const router = useRouter();
   const t = T.id.event;
 
   // Retro floating shapes instead of pastel petals
-  const shapes = ["★", "◆", "●", "▲", "✦", "◉"];
+  const shapes = ["", "◆", "●", "▲", "✦", "◉"];
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#f2e1b3]">
+    <div className="relative min-h-[100dvh] overflow-hidden bg-[#f2e1b3]">
 
       {/* ── RETRO FLOATING SHAPES ──────────────────────────────────────────── */}
       <FloatingShape style={{ top: "8%",  left: "5%"  }} emoji={shapes[0]} />
@@ -130,14 +41,6 @@ export default function EventPage() {
       <FloatingShape style={{ bottom: "15%", left: "8%"  }} emoji={shapes[4]} />
       <FloatingShape style={{ top: "65%", right: "10%" }} emoji={shapes[5]} />
 
-      {/* ── BACK BUTTON ───────────────────────────────────────────────────── */}
-      <motion.button
-        onClick={() => router.back()}
-        whileHover={{ x: -4 }}
-        className="absolute top-5 left-5 z-20 flex items-center gap-1.5 font-poppins font-bold text-[#000650]/60 hover:text-[#000650] text-sm transition-colors cursor-pointer"
-      >
-        <ArrowLeft size={16} strokeWidth={2.5} /> {t.back}
-      </motion.button>
 
       <div className="max-w-xl mx-auto px-5 pt-16 pb-28 relative z-10">
 
@@ -174,7 +77,7 @@ export default function EventPage() {
           {/* Divider — retro style */}
           <div className="mt-6 flex items-center gap-3 w-full max-w-xs">
             <div className="flex-1 h-[2px] bg-[#000650]/20" />
-            <span className="text-xl text-[#ff7b17] font-black">★</span>
+            <span className="text-xl text-[#ff7b17] font-black"></span>
             <div className="flex-1 h-[2px] bg-[#000650]/20" />
           </div>
         </motion.div>
@@ -187,44 +90,59 @@ export default function EventPage() {
           transition={{ type: "spring", stiffness: 240, damping: 22, delay: 0.15 }}
           className="relative"
         >
+          {/* Absolute photobooth circle (Overlapping ticket) */}
+          <div className="absolute right-2 sm:right-6 bottom-2 sm:bottom-4 z-20 flex flex-col items-center w-36 sm:w-40 pointer-events-none">
+            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-[#ff7b17] flex flex-col items-center justify-center relative">
+              
+              {/* Photo strips mockup */}
+              <div className="absolute top-2 left-4 w-6 h-14 bg-white border-[1.5px] border-[#000650] rotate-[-15deg] shadow-sm flex flex-col gap-[2px] p-[2px] z-0">
+                 <div className="flex-1 bg-gray-300"></div>
+                 <div className="flex-1 bg-gray-300"></div>
+                 <div className="flex-1 bg-gray-300"></div>
+              </div>
+              <div className="absolute top-1 right-4 w-6 h-14 bg-white border-[1.5px] border-[#000650] rotate-[10deg] shadow-sm flex flex-col gap-[2px] p-[2px] z-0">
+                 <div className="flex-1 bg-gray-300"></div>
+                 <div className="flex-1 bg-gray-300"></div>
+                 <div className="flex-1 bg-gray-300"></div>
+              </div>
+
+              <span className="font-hoppin text-white text-[15px] sm:text-[17px] leading-tight mt-5 z-10 text-center drop-shadow-sm">
+                Get Free
+              </span>
+              
+              {/* Pill overlap */}
+              <div className="absolute -bottom-3 bg-[#ff7b17] border-[2px] border-[#f2e1b3] text-white font-hoppin text-[10px] sm:text-xs px-3 py-1 rounded-xl shadow-[2px_2px_0px_rgba(0,0,0,0.15)] whitespace-nowrap z-20">
+                Photobooth Ticket
+              </div>
+            </div>
+            
+            {/* Text below the circle */}
+            <span className="mt-4 font-hoppin text-[#ff7b17] text-[10px] sm:text-[11px] drop-shadow-[1px_1px_0px_white]">
+              Untuk 5 Orang Beruntung
+            </span>
+          </div>
+
           {/* Ticket card — retro style with navy border + bold shadow */}
           <div className="rounded-[2rem] overflow-hidden border-4 border-[#000650] shadow-[8px_8px_0px_#000650]">
 
-            {/* Ticket top — navy + lavender */}
-            <div className="px-7 pt-5 pb-8 bg-[#000650] relative">
+            {/* Ticket top — navy */}
+            <div className="px-5 sm:px-7 pt-10 pb-12 bg-[#000650] relative">
+              <h2 className="text-center font-hoppin text-2xl sm:text-3xl lg:text-4xl text-[#f1b32a] uppercase mb-8" style={{ textShadow: "1.5px 1.5px 0px #000" }}>
+                OFFICIAL BOOK LAUNCH
+              </h2>
 
-              {/* Download button — small compact pill, top-right corner */}
-              <motion.button
-                whileHover={{ scale: 1.08, rotate: 3 }}
-                whileTap={{ scale: 0.92 }}
-                transition={{ type: "spring", stiffness: 450, damping: 12 }}
-                className="absolute top-4 right-4 flex flex-col items-center justify-center gap-0.5 bg-[#ff7b17] text-white font-poppins font-black text-[6px] uppercase tracking-tight leading-tight text-center cursor-pointer z-10 border-2 border-[#000650] shadow-[2px_2px_0px_rgba(0,0,0,0.3)] px-2 py-1.5 rounded-xl"
-              >
-                <Download size={10} strokeWidth={2.5} />
-                {t.ticket.downloadBtn.split("\n").map((line, i) => (
-                  <span key={i}>{line}</span>
-                ))}
-              </motion.button>
-
-              {/* All text content — padded right so button never overlaps */}
-              <div className="pr-14">
-                <p className="text-[10px] font-poppins font-black uppercase tracking-[0.3em] mb-3 text-[#f1b32a]">
-                  {t.ticket.badge}
-                </p>
-                <p className="text-white/60 text-xs font-lexend font-bold uppercase tracking-widest mb-1">
-                  {t.ticket.label}
-                </p>
-
-                {/* Giant retro number */}
-                <div
-                  className="font-black leading-none my-2 text-[#ff7b17]"
-                  style={{
-                    fontSize: "clamp(3.5rem, 20vw, 7rem)",
-                    fontFamily: "var(--font-poppins)",
-                    letterSpacing: "-0.04em",
-                  }}
-                >
-                  196
+              <div className="flex flex-col gap-3 relative z-10 sm:max-w-[85%] mx-auto w-fit">
+                <div className="flex flex-wrap justify-start gap-2">
+                  {["Book Display", "Merchandise", "Mentorship Corner"].map((item, i) => (
+                    <div key={i} className="bg-[#424ac7] text-[#f2e1b3] font-hoppin text-[11px] sm:text-sm px-3 py-1.5 shadow-[2px_2px_0px_#000650] border-[1.5px] border-[#000650] rounded-sm">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-wrap justify-start gap-2">
+                  <div className="bg-[#424ac7] text-[#f2e1b3] font-hoppin text-[11px] sm:text-sm px-3 py-1.5 shadow-[2px_2px_0px_#000650] border-[1.5px] border-[#000650] rounded-sm">
+                    Interactive Quiz
+                  </div>
                 </div>
               </div>
             </div>
@@ -232,54 +150,32 @@ export default function EventPage() {
             {/* Perforated divider — retro ticket style */}
             <div className="relative flex items-center bg-[#f2e1b3]">
               <div className="absolute -left-4 w-8 h-8 rounded-full bg-[#f2e1b3] border-4 border-[#000650]" />
-              <div className="w-full border-t-2 border-dashed border-[#000650]/30 mx-6" />
+              <div className="w-full border-t-[3px] border-dashed border-[#000650]/40 mx-6" />
               <div className="absolute -right-4 w-8 h-8 rounded-full bg-[#f2e1b3] border-4 border-[#000650]" />
             </div>
 
             {/* Ticket bottom — cream */}
-            <div className="bg-[#f2e1b3] px-7 py-6 flex items-end justify-between">
+            <div className="bg-[#f2e1b3] px-5 sm:px-7 py-8 flex items-end justify-between pr-24 sm:pr-32">
               <div>
-                <p className="text-[10px] text-[#000650]/40 font-poppins font-bold uppercase tracking-widest mb-1">
-                  {t.ticket.locationLabel}
+                <p className="text-[11px] text-[#ff7b17] font-hoppin uppercase tracking-widest mb-2 flex items-center gap-1.5">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  Waktu dan Lokasi
                 </p>
-                <p className="text-[#000650] font-poppins font-black text-sm leading-snug">
-                  {t.ticket.locationName}
+                <p className="text-[#000650] font-hoppin text-xl sm:text-2xl leading-snug tracking-tight">
+                  Pollux Mall 10.00 - 22.00
                 </p>
-                <p className="text-[#424ac7] text-xs font-lexend font-semibold mt-0.5">
-                  {t.ticket.locationDate}
+                <p className="text-[#000650] font-lexend text-sm sm:text-base font-bold mt-1 tracking-tight">
+                  Sabtu, 1 Agustus 2026
                 </p>
               </div>
 
-              {/* QR placeholder — retro style */}
-              <div className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl bg-white border-2 border-dashed border-[#000650]">
-                📷
-              </div>
+              {/* QR placeholder — removed to make space for photobooth graphic */}
             </div>
           </div>
 
           {/* Floating DOWNLOAD button — REMOVED: now lives inside the card above */}
         </motion.div>
 
-        {/* ══ SECTION E — BOOK CATALOG ══════════════════════════════════════ */}
-        <BookCatalog />
-
-        {/* ── BOTTOM CTA ──────────────────────────────────────────────────── */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-14 text-center"
-        >
-          <motion.button
-            onClick={() => router.push("/")}
-            whileHover={{ scale: 1.06 }}
-            whileTap={{ scale: 0.94 }}
-            transition={{ type: "spring", stiffness: 400, damping: 12 }}
-            className="inline-flex items-center gap-2 font-poppins font-black text-sm px-8 py-4 rounded-full bg-white text-[#000650] border-2 border-[#000650] shadow-[4px_4px_0px_#000650] hover:shadow-[2px_2px_0px_#000650] hover:translate-x-[2px] hover:translate-y-[2px] hover:bg-[#f1b32a] transition-all cursor-pointer"
-          >
-            {t.backHome}
-          </motion.button>
-        </motion.div>
 
       </div>
     </div>

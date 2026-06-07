@@ -19,10 +19,10 @@ export default function IntroPage() {
   };
 
   // Retro floating shapes
-  const shapes = ["★", "◆", "●", "▲", "✦", "◉"];
+  const shapes = ["", "◆", "●", "▲", "✦", "◉"];
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center relative overflow-hidden bg-[#f2e1b3] select-none p-6">
+    <div className="min-h-[100dvh] w-full flex items-center justify-center relative overflow-hidden bg-[#f2e1b3] select-none p-6">
       
       {/* Decorative Floating Elements (Retro shapes instead of pastel cake) */}
       <div className="absolute top-[15%] left-[5%] md:left-[10%] animate-[bounce_4s_ease-in-out_infinite] text-2xl md:text-4xl opacity-40 z-0 text-[#000650] font-black">
@@ -57,7 +57,7 @@ export default function IntroPage() {
             transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
             className="text-5xl md:text-7xl filter drop-shadow-md mt-4"
           >
-            🕹️
+            ️
           </motion.div>
 
           <div className="space-y-4 relative z-10">

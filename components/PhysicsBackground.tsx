@@ -17,7 +17,7 @@ import { useEffect, useRef } from "react";
 
 // Each shape template defines the emoji label, physics geometry, and brand color
 const SHAPE_TEMPLATES = [
-  { label: "★", type: "circle",  r: 22, color: "#ff7b17" },
+  { label: "", type: "circle",  r: 22, color: "#ff7b17" },
   { label: "◆", type: "rect",    w: 28, h: 28, color: "#f1b32a" },
   { label: "●", type: "circle",  r: 16, color: "#424ac7" },
   { label: "▲", type: "poly",    sides: 3, r: 26, color: "#000650" },
