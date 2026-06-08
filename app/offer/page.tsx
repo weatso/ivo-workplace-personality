@@ -5,7 +5,7 @@ export default function OfferPage() {
   return (
     <div className="min-h-[100dvh] bg-[#f2e1b3] text-[#000650] flex flex-col font-poppins py-16 overflow-x-hidden relative z-10">
       <div className="max-w-7xl mx-auto px-6 w-full flex-grow flex flex-col items-center justify-center">
-        
+
         {/* Congratulatory Text Block */}
         <div className="w-full max-w-4xl mx-auto text-center mb-16 flex flex-col gap-2 mt-4 lg:mt-0">
           <p className="font-lexend font-bold text-sm md:text-base lg:text-lg leading-relaxed text-[#000650]">
@@ -20,7 +20,7 @@ export default function OfferPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center w-full mb-16">
-          
+
           {/* Left Column: Book */}
           <div className="flex flex-col items-center lg:items-start w-full relative">
             <div className="bg-[#ff8a29] text-white font-black uppercase px-6 py-2 rounded-xl mb-4 shadow-[3px_3px_0px_#000650] border-2 border-[#000650] rotate-[-3deg] absolute -top-8 left-0 lg:left-8 z-10">
@@ -56,9 +56,9 @@ export default function OfferPage() {
           </div>
 
           {/* Right Column: Merchandise */}
-          <div className="flex flex-col items-center justify-center w-full relative scale-[1.95] origin-right translate-x-[80%] -translate-y-[60%]">
-            <div className="absolute inset-0 w-full h-full pointer-events-none z-10 flex items-end justify-start pl-[8%] lg:pl-[10%] translate-y-[12%]">
-              <svg viewBox="0 0 200 200" className="w-[58%] lg:w-[55%] h-auto -rotate-[30deg]">
+          <div className="flex flex-col items-center justify-center w-full relative scale-[1.95] md:scale-100 lg:scale-[1.95] origin-right md:origin-center lg:origin-right translate-x-[80%] md:translate-x-0 lg:translate-x-[80%] -translate-y-[60%] md:translate-y-0 lg:-translate-y-[60%] mt-0 md:mt-12 lg:mt-0">
+            <div className="absolute inset-0 w-full h-full pointer-events-none z-10 flex items-end justify-start pl-[8%] md:pl-[27%] lg:pl-[10%] translate-y-[12%] md:-translate-y-[2%] lg:translate-y-[12%]">
+              <svg viewBox="0 0 200 200" className="w-[58%] md:w-[40%] lg:w-[55%] h-auto -rotate-[30deg]">
                 <circle cx="100" cy="100" r="75" fill="#ffbe29" />
                 <path id="curve-top" d="M 20, 100 a 80,80 0 0,1 160,0" fill="transparent" />
                 <path id="curve-bottom" d="M 180, 100 a 80,80 0 0,1 -160,0" fill="transparent" />
@@ -70,7 +70,7 @@ export default function OfferPage() {
                 </text>
               </svg>
             </div>
-            <img src="/MERCH.webp" alt="Free Get Merchandise" className="w-full max-w-[420px] lg:max-w-[580px] object-contain relative z-20" />
+            <img src="/MERCH.webp" alt="Free Get Merchandise" className="w-full max-w-[420px] md:max-w-[500px] lg:max-w-[580px] object-contain relative z-20" />
           </div>
 
         </div>

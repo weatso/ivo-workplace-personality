@@ -144,9 +144,9 @@ export default function Home() {
             />
 
             {/* Main Character */}
-            <img 
-              src="/ORANG.webp" 
-              alt="Main Character" 
+            <img
+              src="/ORANG.webp"
+              alt="Main Character"
               className="absolute bottom-[-100px] md:-bottom-[150px] lg:-bottom-[200px] left-[45%] md:left-[42%] lg:left-[40%] -translate-x-1/2 w-[147%] md:w-[120%] lg:w-[147%] max-w-[637px] lg:max-w-[943px] object-contain z-20 pointer-events-none"
             />
           </div>
@@ -314,31 +314,31 @@ export default function Home() {
           {/* TICKET EVENT COMPONENT */}
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative w-full max-w-[560px] mx-auto lg:ml-auto">
             {/* Absolute photobooth circle (Overlapping ticket) */}
-            <div className="absolute right-2 sm:right-6 bottom-2 sm:bottom-4 z-20 flex flex-col items-center w-36 sm:w-40 pointer-events-none">
+            <div className="absolute right-2 sm:right-6 bottom-2 sm:bottom-4 md:scale-[0.95] md:-bottom-16 md:right-0 md:-translate-y-[50%] lg:scale-100 lg:bottom-4 lg:right-6 lg:translate-y-0 origin-bottom-right z-20 flex flex-col items-center w-36 sm:w-40 pointer-events-none">
               <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-[#ff7b17] flex flex-col items-center justify-center relative">
-                
+
                 {/* Photo strips mockup */}
                 <div className="absolute top-2 left-4 w-6 h-14 bg-white border-[1.5px] border-[#000650] rotate-[-15deg] shadow-sm flex flex-col gap-[2px] p-[2px] z-0">
-                   <div className="flex-1 bg-gray-300"></div>
-                   <div className="flex-1 bg-gray-300"></div>
-                   <div className="flex-1 bg-gray-300"></div>
+                  <div className="flex-1 bg-gray-300"></div>
+                  <div className="flex-1 bg-gray-300"></div>
+                  <div className="flex-1 bg-gray-300"></div>
                 </div>
                 <div className="absolute top-1 right-4 w-6 h-14 bg-white border-[1.5px] border-[#000650] rotate-[10deg] shadow-sm flex flex-col gap-[2px] p-[2px] z-0">
-                   <div className="flex-1 bg-gray-300"></div>
-                   <div className="flex-1 bg-gray-300"></div>
-                   <div className="flex-1 bg-gray-300"></div>
+                  <div className="flex-1 bg-gray-300"></div>
+                  <div className="flex-1 bg-gray-300"></div>
+                  <div className="flex-1 bg-gray-300"></div>
                 </div>
 
                 <span className="font-hoppin text-white text-[15px] sm:text-[17px] leading-tight mt-5 z-10 text-center drop-shadow-sm">
                   Get Free
                 </span>
-                
+
                 {/* Pill overlap */}
                 <div className="absolute -bottom-3 bg-[#ff7b17] border-[2px] border-[#f2e1b3] text-white font-hoppin text-[10px] sm:text-xs px-3 py-1 rounded-xl shadow-[2px_2px_0px_rgba(0,0,0,0.15)] whitespace-nowrap z-20">
                   Photobooth Ticket
                 </div>
               </div>
-              
+
               {/* Text below the circle */}
               <span className="mt-4 font-hoppin text-[#ff7b17] text-[10px] sm:text-[11px] drop-shadow-[1px_1px_0px_white]">
                 Untuk 5 Orang Beruntung
@@ -408,13 +408,13 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 flex flex-col gap-16">
           {/* Top Section: Split Layout */}
           <div className="flex flex-col md:flex-row justify-between items-start gap-12 w-full">
-            
+
             {/* Left Side: Contact */}
             <div className="flex flex-col items-start gap-4 z-10 relative">
               <h3 className="text-[#000650] font-poppins font-black text-lg md:text-xl uppercase tracking-widest">
                 CONNECT WITH US
               </h3>
-              
+
               <div className="flex flex-col gap-3 mt-2">
                 <a href="https://www.instagram.com/firstjob_guide/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 bg-white border-2 border-[#000650] shadow-[4px_4px_0px_#000650] hover:shadow-[2px_2px_0px_#000650] hover:translate-x-[2px] hover:translate-y-[2px] px-4 py-2 rounded-full transition-all cursor-pointer">
                   <div className="w-8 h-8 rounded-full bg-[#f2e1b3] flex items-center justify-center text-[#424ac7] group-hover:text-[#ff7b17] transition-colors border-2 border-[#000650]">
@@ -422,7 +422,7 @@ export default function Home() {
                   </div>
                   <span className="font-poppins font-black text-[#000650] text-sm group-hover:text-[#ff7b17] transition-colors">@firstjob_guide</span>
                 </a>
-                
+
                 <a href="https://www.tiktok.com/@firstjob_guide" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 bg-white border-2 border-[#000650] shadow-[4px_4px_0px_#000650] hover:shadow-[2px_2px_0px_#000650] hover:translate-x-[2px] hover:translate-y-[2px] px-4 py-2 rounded-full transition-all cursor-pointer">
                   <div className="w-8 h-8 rounded-full bg-[#f2e1b3] flex items-center justify-center text-[#424ac7] group-hover:text-[#ff7b17] transition-colors border-2 border-[#000650]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" /></svg>
@@ -437,7 +437,7 @@ export default function Home() {
               <h3 className="text-[#000650] font-poppins font-black text-lg md:text-xl uppercase mb-4 md:mb-2 text-center md:text-right tracking-widest relative z-10">
                 IN COLLABORATION WITH
               </h3>
-              <div className="flex flex-col items-center md:items-end w-full -mt-10 md:-mt-32 translate-x-0 md:translate-x-24 scale-[0.84] md:scale-100 origin-top md:origin-right">
+              <div className="flex flex-col items-center md:items-end w-full -mt-10 md:-mt-32 translate-x-0 md:-translate-x-[5%] lg:translate-x-24 scale-[0.84] md:scale-[0.6] lg:scale-100 origin-top md:origin-right">
                 {/* Row 1 */}
                 <div className="flex flex-nowrap items-center justify-center md:justify-end gap-2 md:gap-2">
                   <img src="/LOGO6.webp" alt="Logo Collaboration" className="h-12 md:h-24 object-contain" />
