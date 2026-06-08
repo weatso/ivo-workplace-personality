@@ -16,8 +16,8 @@ export const T = {
         body: "Literally web ini dibuat biar kamu paham work vibes kamu kayak gimana. Apakah kamu tipe yang lowkey nahan diri, gampang meledak, suka nyindir halus, atau malah slay banget nyampein pendapat? Paham ginian tuh penting banget biar karir dan circle profesional kamu makin healthy and toxic-free!",
       },
       showcase: {
-        heading: "4 Work Personas Kamu",
-        sub: "Cek kamu masuk circle yang mana dan gimana cara keep up sama bestie sekantor!",
+        heading: "4 Communication Style",
+        sub: "Which one are you?",
         types: [
           { name: "Pasif (The People Pleaser)", desc: "Lowkey diem aja, FOMO konflik, dan sering nahan opini demi nyenengin orang lain. Relate?", emoji: "", color: "bg-[#81D4FA]" },
           { name: "Agresif (The Bossy)", desc: "Vibes-nya mendominasi abis. Nggak ragu maksa kehendak dan kadang red flag karena ngabaikan perasaan yang lain.", emoji: "", color: "bg-[#FFAB76]" },
@@ -111,10 +111,10 @@ export const T = {
     // ── Finish Page ──────────────────────────────────────────────────────────
     finish: {
       title: "Keren Banget! ",
-      body: "Kamu udah kelarin semua pertanyaannya. Vibes kepribadian kamu udah mau mateng nih!",
-      cta: "Cek Vibes Kamu Sekarang",
+      body: "Kamu udah kelarin semua pertanyaannya. Gaya komunikasi kamu udah mau mateng nih!",
+      cta: "Cek Gaya Komunikasi Kamu Sekarang",
       loadingTitle: "Wait a sec...",
-      loadingBody: "Lagi nge-mix adonan kepribadian kamu",
+      loadingBody: "Lagi nge-mix adonan gaya komunikasi kamu",
     },
 
     // ── Result Page ──────────────────────────────────────────────────────────
