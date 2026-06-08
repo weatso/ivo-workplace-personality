@@ -4,7 +4,7 @@ export default function Shop() {
   return (
     <div className="min-h-[100dvh] bg-[#f2e1b3] text-[#000650] flex flex-col font-poppins py-16 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6 w-full flex-grow flex items-center justify-center">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center w-full relative">
 
           {/* Left Column: Book */}
           <div className="flex flex-col items-center lg:items-start w-full relative">
@@ -41,9 +41,9 @@ export default function Shop() {
           </div>
 
           {/* Right Column: Merchandise */}
-          <div className="flex flex-col items-center justify-center w-full relative scale-[1.95] md:scale-100 lg:scale-[1.95] origin-right md:origin-center lg:origin-right translate-x-[80%] md:translate-x-0 lg:translate-x-[80%] -translate-y-[60%] md:translate-y-0 lg:-translate-y-[60%] mt-0 md:mt-12 lg:mt-0">
-            <div className="absolute inset-0 w-full h-full pointer-events-none z-10 flex items-end justify-start pl-[8%] md:pl-[27%] lg:pl-[10%] translate-y-[12%] md:-translate-y-[2%] lg:translate-y-[12%]">
-              <svg viewBox="0 0 200 200" className="w-[58%] md:w-[40%] lg:w-[55%] h-auto -rotate-[30deg]">
+          <div className="flex flex-col items-center justify-center w-full relative md:absolute lg:relative md:-top-8 lg:top-auto md:right-4 lg:right-auto md:w-[250px] lg:w-full scale-[1.55] md:scale-[1.15] lg:scale-[1.95] origin-right md:origin-top-right lg:origin-right translate-x-[50%] md:translate-x-[40%] lg:translate-x-[80%] translate-y-[10%] md:-translate-y-[30%] lg:-translate-y-[60%] mt-0 md:mt-0 lg:mt-0 md:z-20">
+            <div className="absolute inset-0 w-full h-full pointer-events-none z-10 flex items-end justify-start pl-[8%] lg:pl-[10%] translate-y-[12%] lg:translate-y-[12%]">
+              <svg viewBox="0 0 200 200" className="w-[58%] lg:w-[55%] h-auto -rotate-[30deg]">
                 <circle cx="100" cy="100" r="75" fill="#ffbe29" />
                 <path id="curve-top" d="M 20, 100 a 80,80 0 0,1 160,0" fill="transparent" />
                 <path id="curve-bottom" d="M 180, 100 a 80,80 0 0,1 -160,0" fill="transparent" />

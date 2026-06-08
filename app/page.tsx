@@ -283,8 +283,8 @@ export default function Home() {
         <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-16 items-center">
 
           {/* BUY BOOK */}
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="flex flex-col items-start text-left">
-            <span className="inline-block bg-[#ff7b17] text-white font-poppins font-black text-sm px-4 py-1.5 rounded-full border-2 border-[#000650] mb-6 uppercase tracking-wider">
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="flex flex-col items-start text-left w-full">
+            <span className="inline-block bg-[#ff7b17] text-white font-poppins font-black text-sm px-4 py-1.5 rounded-full border-2 border-[#000650] mb-6 uppercase tracking-wider self-center lg:self-start">
               {t.buyBanner.badge}
             </span>
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 mb-8">
@@ -314,7 +314,7 @@ export default function Home() {
           {/* TICKET EVENT COMPONENT */}
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative w-full max-w-[560px] mx-auto lg:ml-auto">
             {/* Absolute photobooth circle (Overlapping ticket) */}
-            <div className="absolute right-2 sm:right-6 bottom-2 sm:bottom-4 md:scale-[0.95] md:-bottom-16 md:right-0 md:-translate-y-[50%] lg:scale-100 lg:bottom-4 lg:right-6 lg:translate-y-0 origin-bottom-right z-20 flex flex-col items-center w-36 sm:w-40 pointer-events-none">
+            <div className="absolute right-2 sm:right-6 bottom-2 sm:bottom-4 scale-[0.81] -translate-y-[8%] sm:scale-[0.8] sm:translate-y-0 md:scale-[0.95] md:-bottom-16 md:right-0 md:-translate-y-[50%] lg:scale-100 lg:bottom-4 lg:right-6 lg:translate-y-0 origin-bottom-right z-20 flex flex-col items-center w-36 sm:w-40 pointer-events-none">
               <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-[#ff7b17] flex flex-col items-center justify-center relative">
 
                 {/* Photo strips mockup */}
@@ -407,15 +407,15 @@ export default function Home() {
       <footer className="w-full bg-[#f2e1b3] pt-16 pb-8">
         <div className="max-w-6xl mx-auto px-6 flex flex-col gap-16">
           {/* Top Section: Split Layout */}
-          <div className="flex flex-col md:flex-row justify-between items-start gap-12 w-full">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-12 w-full">
 
             {/* Left Side: Contact */}
-            <div className="flex flex-col items-start gap-4 z-10 relative">
-              <h3 className="text-[#000650] font-poppins font-black text-lg md:text-xl uppercase tracking-widest">
+            <div className="flex flex-col items-center md:items-start gap-4 z-10 relative w-full md:w-auto">
+              <h3 className="text-[#000650] font-poppins font-black text-lg md:text-xl uppercase tracking-widest text-center md:text-left">
                 CONNECT WITH US
               </h3>
 
-              <div className="flex flex-col gap-3 mt-2">
+              <div className="flex flex-col items-center md:items-start gap-3 mt-2">
                 <a href="https://www.instagram.com/firstjob_guide/" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 bg-white border-2 border-[#000650] shadow-[4px_4px_0px_#000650] hover:shadow-[2px_2px_0px_#000650] hover:translate-x-[2px] hover:translate-y-[2px] px-4 py-2 rounded-full transition-all cursor-pointer">
                   <div className="w-8 h-8 rounded-full bg-[#f2e1b3] flex items-center justify-center text-[#424ac7] group-hover:text-[#ff7b17] transition-colors border-2 border-[#000650]">
                     <Instagram size={16} strokeWidth={2.5} />

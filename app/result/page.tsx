@@ -38,25 +38,33 @@ export default function ResultPage() {
 
   const result = getResult(answers);
 
-  const handleDownloadPDF = async () => {
+  const handleDownloadImage = async () => {
     if (isDownloading) return;
     setIsDownloading(true);
     try {
       const element = document.getElementById("result-pdf-container");
       if (!element) throw new Error("Element not found");
-      const html2pdfModule = await import("html2pdf.js");
-      const html2pdf = html2pdfModule.default || html2pdfModule;
-      const opt = {
-        margin: 0,
-        filename: `WorkPersona_Result.pdf`,
-        image: { type: "jpeg" as const, quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, logging: false },
-        jsPDF: { unit: "mm" as const, format: "a4" as const, orientation: "portrait" as const },
-      };
-      await html2pdf().set(opt).from(element).save();
+      
+      const html2canvasModule = await import("html2canvas");
+      const html2canvas = html2canvasModule.default;
+      
+      const canvas = await html2canvas(element, { 
+        scale: 2, 
+        useCORS: true, 
+        logging: false,
+        backgroundColor: "#f2e1b3" 
+      });
+      
+      const dataUrl = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = dataUrl;
+      link.download = `WorkPersona_Result.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } catch (error) {
-      console.error("Error generating PDF:", error);
-      alert("Maaf, terjadi kesalahan saat menyimpan PDF.");
+      console.error("Error generating Image:", error);
+      alert("Maaf, terjadi kesalahan saat menyimpan gambar.");
     } finally {
       setIsDownloading(false);
     }
@@ -222,7 +230,7 @@ export default function ResultPage() {
             </div>
           </div>
 
-          {/* ── C) BOTTOM BAR inside card (for PDF export only) ── */}
+          {/* ── C) BOTTOM BAR inside card (for Image export only) ── */}
           <div className="bg-[#000650] px-5 py-3 flex items-center justify-between">
             <div>
               <p className="text-white font-poppins font-black text-xs leading-tight">WHICH COMMUNICATOR</p>
@@ -245,7 +253,7 @@ export default function ResultPage() {
           {/* ── ACTION BUTTONS (inside sticky bottom bar) ── */}
           <div className="w-full flex gap-3">
             <motion.button
-              onClick={() => { playPop(); handleDownloadPDF(); }}
+              onClick={() => { playPop(); handleDownloadImage(); }}
               disabled={isDownloading}
               whileHover={isDownloading ? {} : { scale: 1.03 }}
               whileTap={isDownloading ? {} : { scale: 0.97 }}
