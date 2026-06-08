@@ -168,7 +168,7 @@ export default function Home() {
               alt="It's your time to take a quick quiz!"
               className="w-[120%] sm:w-[110%] max-w-[1050px] object-contain mb-2 sm:mb-4 relative z-0"
             />
-            <p className="text-xl sm:text-2xl font-lexend text-white mb-6 sm:mb-8 max-w-3xl mx-auto px-4 -mt-[120px] min-[400px]:-mt-[160px] sm:-mt-[240px] md:-mt-[320px] lg:-mt-[400px] relative z-10">
+            <p className="text-xl sm:text-2xl font-lexend text-white mb-6 sm:mb-8 max-w-3xl mx-auto px-4 -mt-[120px] min-[400px]:-mt-[160px] sm:-mt-[240px] md:-mt-[320px] lg:-mt-[400px] relative z-10 -translate-y-[29%]">
               {t.quizCTA.body}
             </p>
             {/* Magnetic CTA button */}
